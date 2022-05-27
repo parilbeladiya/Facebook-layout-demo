@@ -1,0 +1,135 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background: #ddd;
+}
+
+:root {
+    --header: 40px;
+}
+
+.header {
+    height: var(--header);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 5%;
+    background: #0f0fff;
+    color: #fff;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .logo {
+    padding: 10px;
+}
+
+.main-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.main-nav ul li {
+    padding: 10px;
+    display: inline-block;
+}
+
+main {
+    margin: var(--header) 0 0;
+    display: grid;
+    justify-content: center;
+    height: calc(100vh - var(--header));
+    grid-template-columns: 200px 500px 300px;
+    grid-column-gap: 12px;
+    grid-template-areas: "nav feed services";
+}
+
+@media (min-width: 1250px) {
+    main {
+        padding-right: 200px;
+    }
+}
+
+.side-nav {
+    grid-area: nav;
+    background: #fff;
+    border: solid 2px #ccc;
+    border-radius: 5px;
+    margin: 1rem 0 0;
+}
+
+.news-feed {
+    grid-area: feed;
+    height: calc(100vh - var(--header));
+    overflow-y: scroll;
+}
+
+.services {
+    grid-area: services;
+    background: #fff;
+    border: solid 2px #ccc;
+    border-radius: 5px;
+    margin: 1rem 0 0;
+}
+
+.post {
+    background: #fff;
+    border: solid 2px #ccc;
+    border-radius: 7px;
+    padding: 10px;
+    /* overflow: hidden; */
+    margin: 1rem 0;
+}
+
+.post-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.avatar {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.post-info {
+    margin-left: 10px;
+}
+
+.post-info a,
+.post-info span {
+    display: block;
+}
+
+.post-content img {
+    width: 100%;
+}
+
+.post-engage {
+    padding: 10px 0;
+}
+
+.comment {
+    background: #eee;
+    border-top: 1px solid #ccc;
+    display: flex;
+    margin: 0 -10px -10px;
+    padding: 10px;
+}
+
+.comment input {
+    width: 100%;
+    margin-left: 10px;
+    border-radius: 20px;
+    border: solid 1px #ccc;
+    padding: 10px 20px;
+}
+
